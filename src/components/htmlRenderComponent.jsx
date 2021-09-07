@@ -718,7 +718,7 @@ export const HTMLRender = class HTMLRender extends React.Component {
       let json = JSON.parse(this.props.data);
 
       // check if getId name was added to the home name
-      if (Array.isArray(json) && window.location.href.indexOf("getid") > -1) {
+      if (Array.isArray(json) && window.location.href.indexOf("finnid") > -1) {
         return json.map((item, index) => (
           //...and render of the getIt page happens here
           <div key={index}>
