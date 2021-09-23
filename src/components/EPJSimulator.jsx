@@ -17,14 +17,14 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
       data: "",
       matches: -1,
       showContent: false,
-      showSpinner: false
+      showSpinner: false,
     };
   }
 
   componentDidMount() {
     const urlParams = new URLSearchParams(window.location.search);
-    const valueHapiId = urlParams.get('hapiId');
-    if(valueHapiId) {
+    const valueHapiId = urlParams.get("hapiId");
+    if (valueHapiId) {
       const url = helsedirBaseUrl + valueHapiId;
       this.fetchContent(url);
       this.setState({ showContent: true });
@@ -75,7 +75,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
       });
 
       // Text render demo (commented out now) START
-        // check if there is data with required field:
+      // check if there is data with required field:
       if (data[0]?.tekst !== undefined) {
         this.setState({ content: data[0].tekst });
       }
@@ -125,14 +125,14 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
 
     const url = helsedirBaseUrl + "?kodeverk=" + codeSystem + "&kode=" + code;
     this.fetchContent(url);
-  }
+  };
 
   fetchContent = (url) => {
     this.setState({ showSpinner: true });
     // reset state to clean results before new loading
     this.setState({ matches: -1, data: "", showContent: false });
     // API key depends on environment: current -> Production
-    
+
     console.log("urlwrfgwerwrvergr", url);
 
     fetch(url, params)
@@ -259,11 +259,19 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
   render() {
     return (
       <div>
-        <div 
-          style={{backgroundColor: '#FCA903'}}
-          className="jumbotron text-center">
-          <h1>EPJ-simulator</h1>
-          <p>Choose the code system and make a search throught SNOMED</p>
+        <div
+          style={{ backgroundColor: "#025169" }}
+          className="jumbotron text-left"
+        >
+          <img
+            src="assets/logo.png"
+            alt="logo"
+            height="50px"
+            style={{ marginBottom: "30px" }}
+          ></img>
+          <h1 style={{ color: "#ffffff" }} className="reduced">
+            EPJ-simulator - Klinisk beslutningsstøtte fra HAPI
+          </h1>
         </div>
 
         <div className="row, top">

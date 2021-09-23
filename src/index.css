@@ -219,6 +219,9 @@ div.rendered > ul > li {
   font-weight: bold !important;
   color: black;
 }
+h1.reduced {
+  font-size: 20px;
+}
 #popup-hapi .accordion-head {
   background-color: white !important;
   transition: 0.3s;
