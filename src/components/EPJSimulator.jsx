@@ -270,7 +270,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
             style={{ marginBottom: "30px" }}
           ></img>
           <h1 style={{ color: "#ffffff" }} className="reduced">
-            EPJ-simulator - Klinisk beslutningsstøtte fra HAPI
+            EHR simulator - clinical decision support from HAPI
           </h1>
         </div>
 
@@ -283,7 +283,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
                 onChange={(evt) => this.setState({ env: evt.target.value })}
               >
                 <option value="" select="default">
-                  Velg kontekst
+                  Context
                 </option>
                 {/* Rend  er options dynamically from codeSystemEnv */}
                 {codeSystemEnv.map((codeSystem, key) => (
@@ -301,7 +301,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
             <div className="row">
               <div className="form-group">
                 <label htmlFor="notat">
-                  <b>Notat:</b>
+                  <b>Medical history:</b>
                 </label>
                 <textarea
                   aria-label="Notat"
@@ -316,7 +316,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
             <div className="row">
               <div className="form-group">
                 <label htmlFor="funn">
-                  <b>Funn:</b>
+                  <b>Clinical Findings:</b>
                 </label>
                 <textarea
                   id="funn"
@@ -330,7 +330,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
             <div className="row">
               <div className="form-group">
                 <label htmlFor="vurdering">
-                  <b>Vurdering:</b>
+                  <b>Assessment:</b>
                 </label>
                 <textarea
                   id="vurdering"
@@ -344,7 +344,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
             <div className="row">
               <div className="form-group">
                 <label htmlFor="tiltak">
-                  <b>Tiltak:</b>
+                  <b>Plan:</b>
                 </label>
                 <textarea
                   id="tiltak"
@@ -359,7 +359,9 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
           <div className="col-sm-6">
             <div className="row">
               <p>
-                <b>Årsak (symptom, plage eller tentativ diagnose):</b>
+                <b>
+                  Reason for visit (symptom, tentativ diagnosis, diagnosis):
+                </b>
               </p>
             </div>
 
@@ -400,7 +402,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
                 {this.state.showContent ? (
                   <div id="popup-hapi" className="popupHAPI">
                     <div className="header">
-                      <span>Beslutningsstøtte</span>
+                      <span>Decision support</span>
                       <span
                         className="popup-close"
                         onClick={() => this.setState({ showContent: false })}
