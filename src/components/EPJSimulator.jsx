@@ -359,9 +359,7 @@ export const EPJSimulator = class EPJSimulator extends React.Component {
           <div className="col-sm-6">
             <div className="row">
               <p>
-                <b>
-                  Reason for visit (symptom, tentativ diagnosis, diagnosis):
-                </b>
+                <b>Problem (symptom, tentativ diagnosis, diagnosis):</b>
               </p>
             </div>
 
